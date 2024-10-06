@@ -1,0 +1,33 @@
+version: '3'
+services:
+  java-microservice:
+    image: stewartmb/java-microservice:latest
+    ports:
+      - "8011:8011"
+    networks:
+      - microservice-network
+
+  api-micro2:
+    image: stewartmb/api_micro2:latest
+    ports:
+      - "8012:8012"
+    networks:
+      - microservice-network
+
+  api-micro3:
+    image: stewartmb/api_micro3:latest
+    ports:
+      - "8013:8013"
+    networks:
+      - microservice-network
+
+  orquestador:
+    image: stewartmb/orquestador:latest
+    ports:
+      - "8010:8010"
+    networks:
+      - microservice-network
+
+networks:
+  microservice-network:
+    driver: bridge
