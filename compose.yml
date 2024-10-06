@@ -10,14 +10,14 @@ services:
   api-micro2:
     image: stewartmb/api_micro2:latest
     ports:
-      - "8012:8012"
+      - "8012:8000"
     networks:
       - microservice-network
 
   api-micro3:
     image: stewartmb/api_micro3:latest
     ports:
-      - "8013:8013"
+      - "8013:8913"
     networks:
       - microservice-network
 
